@@ -9,7 +9,7 @@ const loadData = () =>{
 
     const  displayDog = (dogData) => {
     const dogId = document.getElementById('dogId')
-    const firstData = dogData.slice(0,10);
+    const firstData = dogData.slice(0,50);
     
     for(const dog of firstData){
         const div =document.createElement('div')
@@ -17,8 +17,13 @@ const loadData = () =>{
         dogId.appendChild(div)
         div.innerHTML=`
         <h3>${dog.name}</h3>
+        <p> ${dog.temperament}</p>
+        <p>Life Span: ${dog.life_span}</p>
+        <img width ="400px" height="250px"  src =${dog.image.url} />
 
         `
+        console.log(dog);
+       
        
     }
  
