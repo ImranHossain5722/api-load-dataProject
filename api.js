@@ -6,11 +6,16 @@ const loadData = () =>{
     .then (data =>  displayDog(data) )
 
 }
-
+// spinner 
+    const displaySpinner = spinnerStyle =>{
+    document.getElementById('spinner').style.display = spinnerStyle
+    }
+//  event handler
     const  displayDog = (dogData) => {
     const dogId = document.getElementById('dogId')
     const firstData = dogData.slice(0,50);
-    
+// spinner function
+    displaySpinner('block')
     for(const dog of firstData){
         const div =document.createElement('div')
         div.className = "col-lg-4"
@@ -21,12 +26,12 @@ const loadData = () =>{
         <p>Life Span: ${dog.life_span}</p>
         <img width ="400px" height="250px"  src =${dog.image.url} />
 
-        `
-        console.log(dog);
-       
+     `
+              
        
     }
  
-
+// spinner function
+displaySpinner('none')
 }
 
